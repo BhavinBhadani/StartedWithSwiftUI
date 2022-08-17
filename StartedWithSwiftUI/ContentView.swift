@@ -11,9 +11,7 @@ struct ContentView: View {
     @State private var isOpen = false
     var body: some View {
         VStack {
-            Image(systemName: "arrow.down")
-                .rotationEffect(.degrees(isOpen ? 180 : 0))
-            
+            ArrowView(isOpen: $isOpen)
             Button {
                 withAnimation {
                     isOpen.toggle()
@@ -24,6 +22,15 @@ struct ContentView: View {
         }
     }
 }
+
+struct ArrowView: View {
+    @Binding var isOpen: Bool
+    var body: some View {
+        Image(systemName: "arrow.down")
+            .rotationEffect(.degrees(isOpen ? -180 : 0))
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
