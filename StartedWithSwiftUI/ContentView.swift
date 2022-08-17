@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isOpen = false
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Image(systemName: "arrow.down")
+                .rotationEffect(.degrees(isOpen ? 180 : 0))
+            
+            Button {
+                withAnimation {
+                    isOpen.toggle()
+                }
+            } label: {
+                Text("Press here")
+            }
+        }
     }
 }
 
