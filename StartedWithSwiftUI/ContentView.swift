@@ -9,11 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-//        Image(systemName: "cloud.sun")
-//            .font(.system(size: 50, weight: .bold))
-//            .foregroundColor(.red)
-//            .symbolVariant(.fill)
-        
+        Image(systemName: "cloud.sun")
+            .font(.system(size: 50, weight: .bold))
+            .foregroundColor(.red)
+            .symbolVariant(.fill)
+    }
+}
+
+struct ImageStackRendringView: View {
+    var body: some View {
         VStack {
             Image(systemName: "cloud.sun")
                 .symbolRenderingMode(.monochrome)
@@ -38,6 +42,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ImageStackRendringView()
     }
 }
