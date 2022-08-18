@@ -18,8 +18,8 @@ struct ShapeViews: View {
     var body: some View {
         VStack {
             Capsule(style: .circular)
+                .fill(.blue)
                 .frame(width: 200, height: 40)
-                .foregroundColor(.blue)
             
             Capsule(style: .continuous)
                 .frame(width: 100, height: 50)
