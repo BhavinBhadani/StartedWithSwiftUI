@@ -14,6 +14,38 @@ struct ContentView: View {
     }
 }
 
+struct BorderViews: View {
+    var body: some View {
+        VStack {
+            Text("Hello, world!")
+                .padding()
+                .border(.red)
+            
+            Text("Border with width")
+                .padding()
+                .border(.orange, width: 2)
+            
+            Text("With Overlay property")
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(.blue, lineWidth: 2)
+                )
+
+            Circle()
+                .strokeBorder(
+                    AngularGradient(gradient: Gradient(colors: [.red, .orange, .red]),
+                                    center: .center,
+                                    endAngle: .degrees(360)),
+                    lineWidth: 20
+                )
+                .frame(width: 100, height: 100)
+        }
+        .padding()
+    }
+}
+
+
 struct ShapeViews: View {
     var body: some View {
         VStack {
@@ -51,6 +83,6 @@ struct ShapeViews: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ShapeViews()
+        BorderViews()
     }
 }
